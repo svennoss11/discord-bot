@@ -1,0 +1,547 @@
+{
+  "command": [
+    {
+      "name": "nordvpn",
+      "perms": [],
+      "actions": [
+        {
+          "name": "checkpermsnordvpn",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "nordvpn1_1",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "varname": "nordvpn",
+              "min": "1",
+              "max": "639",
+              "savevartype": "temp"
+            },
+            {
+              "name": "nordvpnn_1",
+              "category": "Spreadsheet",
+              "type": "Get Row",
+              "trueActions": [
+                {
+                  "name": "messagenordvpn_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "Account Type",
+                      "value": "nordvpn",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "account:",
+                      "value": "${tempVars.nordvpn1.codes}",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandAuthor.user.dmChannel}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "messagenordvpninchannel_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": ":green_square:  Successfully Sent An Account To Your Dm's!",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "helpmessage_1_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "-type",
+                      "value": " To Generate An Account",
+                      "inline": "true"
+                    },
+                    {
+                      "name": "-acc",
+                      "value": "To See What You Can Get",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "falseActions": [],
+              "selectedsheet": "nordvpn.csv",
+              "colheader": "num,",
+              "colval": "${tempVars.nordvpn}",
+              "rowvariable": "nordvpn1",
+              "savevartype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "nordvpn cooldown",
+              "category": "Message",
+              "type": "Command Cooldown",
+              "seconds": "15",
+              "msg1": ":red_square: your on 15 sec cooldown",
+              "msg2": ""
+            },
+            {
+              "name": "nordvpn1",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "varname": "nordvpn",
+              "min": "1",
+              "max": "639",
+              "savevartype": "temp"
+            },
+            {
+              "name": "nordvpnn",
+              "category": "Spreadsheet",
+              "type": "Get Row",
+              "trueActions": [
+                {
+                  "name": "messagenordvpn",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "Account Type",
+                      "value": "nordvpn",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "account:",
+                      "value": "${tempVars.nordvpn1.codes}",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandAuthor.user.dmChannel}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "messagenordvpninchannel",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": ":green_square:  Successfully Sent An Account To Your Dm's!",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "helpmessage_1_1_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "-type",
+                      "value": " To Generate An Account",
+                      "inline": "true"
+                    },
+                    {
+                      "name": "-acc",
+                      "value": "To See What You Can Get",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "falseActions": [],
+              "selectedsheet": "nordvpn.csv",
+              "colheader": "num,",
+              "colval": "${tempVars.nordvpn}",
+              "rowvariable": "nordvpn1",
+              "savevartype": "temp"
+            }
+          ],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nitro",
+      "actions": [
+        {
+          "name": "checkpermsnordvpn_1",
+          "category": "User Action",
+          "type": "Check User Permissions",
+          "trueActions": [
+            {
+              "name": "nordvpn1_2_1",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "varname": "nitro",
+              "min": "1",
+              "max": "1000",
+              "savevartype": "temp"
+            },
+            {
+              "name": "nordvpnn_2_1",
+              "category": "Spreadsheet",
+              "type": "Get Row",
+              "trueActions": [
+                {
+                  "name": "messagenordvpn_2_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "Account Type",
+                      "value": "nitro",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "account:",
+                      "value": "${tempVars.nitro.nitro}",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandAuthor.user.dmChannel}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "messagenordvpninchannel_2_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": ":green_square:  Successfully Sent An Account To Your Dm's!",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "helpmessage_1_1_1_2",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "-type",
+                      "value": " To Generate An Account",
+                      "inline": "true"
+                    },
+                    {
+                      "name": "-acc",
+                      "value": "To See What You Can Get",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "falseActions": [],
+              "selectedsheet": "nordvpn.csv",
+              "colheader": "num,",
+              "colval": "${tempVars.nitro}",
+              "rowvariable": "nitro",
+              "savevartype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "nordvpn cooldown_1",
+              "category": "Message",
+              "type": "Command Cooldown",
+              "seconds": "15",
+              "msg1": ":red_square: your on 15 sec cooldown",
+              "msg2": ""
+            },
+            {
+              "name": "nordvpn1_2",
+              "category": "Variable",
+              "type": "Generate Random Number",
+              "varname": "nitro",
+              "min": "1",
+              "max": "1000",
+              "savevartype": "temp"
+            },
+            {
+              "name": "nordvpnn_2",
+              "category": "Spreadsheet",
+              "type": "Get Row",
+              "trueActions": [
+                {
+                  "name": "messagenordvpn_2",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "Account Type",
+                      "value": "nitro",
+                      "inline": "false"
+                    },
+                    {
+                      "name": "account:",
+                      "value": "${tempVars.nitro.nitro}",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandAuthor.user.dmChannel}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "messagenordvpninchannel_2",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": ":green_square:  Successfully Sent An Account To Your Dm's!",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                },
+                {
+                  "name": "helpmessage_1_1_1_1",
+                  "category": "Message",
+                  "type": "Send Embed",
+                  "fields": [
+                    {
+                      "name": "-type",
+                      "value": " To Generate An Account",
+                      "inline": "true"
+                    },
+                    {
+                      "name": "-acc",
+                      "value": "To See What You Can Get",
+                      "inline": "true"
+                    }
+                  ],
+                  "channelname": "${dbsVars.CommandChannel.id}",
+                  "color": "FF0000",
+                  "title": "svqn gen",
+                  "url": "",
+                  "authorname": "",
+                  "authorimageurl": "",
+                  "authorlink": "",
+                  "description": "",
+                  "thumbnail": "",
+                  "image": "",
+                  "footer": "",
+                  "timestamp": "false",
+                  "savetovariable": "",
+                  "savetovariabletype": "temp"
+                }
+              ],
+              "falseActions": [],
+              "selectedsheet": "nordvpn.csv",
+              "colheader": "num,",
+              "colval": "${tempVars.nitro}",
+              "rowvariable": "nitro",
+              "savevartype": "temp"
+            }
+          ],
+          "user": "${dbsVars.CommandAuthor.id}",
+          "permissions": [
+            "ADMINISTRATOR"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "acc",
+      "actions": [
+        {
+          "name": "accmessage",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "nordvpn",
+              "value": "-nordvpn",
+              "inline": "true"
+            },
+            {
+              "name": "nitro",
+              "value": "-nitro",
+              "inline": "true"
+            },
+            {
+              "name": "soon",
+              "value": "more soon",
+              "inline": "false"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "acc",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "helpbot",
+      "perms": [],
+      "actions": [
+        {
+          "name": "helpmessage_1",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "-type",
+              "value": " To Generate An Account",
+              "inline": "true"
+            },
+            {
+              "name": "-acc",
+              "value": "To See What You Can Get",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FF0000",
+          "title": "svqn gen",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}

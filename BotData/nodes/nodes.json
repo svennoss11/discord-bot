@@ -1,0 +1,1424 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "nordvpn",
+      "guid": "540f0dae-96e5-48c5-9e1e-e9412da4a95c",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ded496d9-ca95-450a-907a-762006393f77"
+          ]
+        }
+      ],
+      "x": 12,
+      "y": 265,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "nordvpn1",
+      "guid": "7db17a3a-aae9-483e-a1ab-6e8698a2f108",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c93702ba-3cb3-4b84-b007-6332543632de"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e639599f-717b-409c-9864-1f0d0871b090"
+        }
+      ],
+      "x": 338,
+      "y": 424,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "nordvpn",
+        "1",
+        "639",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpnn",
+      "guid": "c93702ba-3cb3-4b84-b007-6332543632de",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "a06c48fe-2afe-48f2-b834-2b6c87a2a981"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7db17a3a-aae9-483e-a1ab-6e8698a2f108"
+        }
+      ],
+      "x": 496,
+      "y": 427,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "nordvpn.csv",
+        "num,",
+        "${tempVars.nordvpn}",
+        "nordvpn1",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpn",
+      "guid": "a06c48fe-2afe-48f2-b834-2b6c87a2a981",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Account Type",
+          "value": "nordvpn",
+          "inline": "false"
+        },
+        {
+          "name": "account:",
+          "value": "${tempVars.nordvpn1.codes}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "073609cc-3316-407b-be91-7ef861f95488"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c93702ba-3cb3-4b84-b007-6332543632de"
+        }
+      ],
+      "x": 644,
+      "y": 441,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandAuthor.user.dmChannel}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpninchannel",
+      "guid": "073609cc-3316-407b-be91-7ef861f95488",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cabc09b6-122e-446f-986b-aec1612de2d3"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a06c48fe-2afe-48f2-b834-2b6c87a2a981"
+        }
+      ],
+      "x": 794,
+      "y": 427,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        ":green_square:  Successfully Sent An Account To Your Dm's!",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpn cooldown",
+      "guid": "e639599f-717b-409c-9864-1f0d0871b090",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "7db17a3a-aae9-483e-a1ab-6e8698a2f108"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ded496d9-ca95-450a-907a-762006393f77"
+        }
+      ],
+      "x": 184,
+      "y": 414,
+      "rtype": "Message",
+      "rsubtype": "Command Cooldown",
+      "formdata": [
+        "15",
+        ":red_square: your on 15 sec cooldown",
+        ""
+      ],
+      "formnames": [
+        "seconds",
+        "msg1",
+        "msg2"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "checkpermsnordvpn",
+      "guid": "ded496d9-ca95-450a-907a-762006393f77",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "4b7db49f-260c-4e3e-b7a9-bd5bbc2cce5b"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "e639599f-717b-409c-9864-1f0d0871b090"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "540f0dae-96e5-48c5-9e1e-e9412da4a95c"
+        }
+      ],
+      "x": 175,
+      "y": 262,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpn1_1",
+      "guid": "4b7db49f-260c-4e3e-b7a9-bd5bbc2cce5b",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "5835b477-f450-410f-a92b-4daef88c69cc"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ded496d9-ca95-450a-907a-762006393f77"
+        }
+      ],
+      "x": 184,
+      "y": 171,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "nordvpn",
+        "1",
+        "639",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpnn_1",
+      "guid": "5835b477-f450-410f-a92b-4daef88c69cc",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "2334aff7-445f-4e30-bdb4-da98fe53f86b"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4b7db49f-260c-4e3e-b7a9-bd5bbc2cce5b"
+        }
+      ],
+      "x": 332,
+      "y": 154,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "nordvpn.csv",
+        "num,",
+        "${tempVars.nordvpn}",
+        "nordvpn1",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpn_1",
+      "guid": "2334aff7-445f-4e30-bdb4-da98fe53f86b",
+      "embedfields": [
+        {
+          "name": "Account Type",
+          "value": "nordvpn",
+          "inline": "false"
+        },
+        {
+          "name": "account:",
+          "value": "${tempVars.nordvpn1.codes}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "457704f4-0c55-4c3a-80e8-c58be49f0fcf"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5835b477-f450-410f-a92b-4daef88c69cc"
+        }
+      ],
+      "x": 481,
+      "y": 171,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandAuthor.user.dmChannel}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpninchannel_1",
+      "guid": "457704f4-0c55-4c3a-80e8-c58be49f0fcf",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2c17ef61-eb48-4336-b7ec-56fc62183e39"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2334aff7-445f-4e30-bdb4-da98fe53f86b"
+        }
+      ],
+      "x": 637,
+      "y": 176,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        ":green_square:  Successfully Sent An Account To Your Dm's!",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "nitro",
+      "guid": "58fb1e90-b2a9-4b06-81c8-9b7337ff5195",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "516ec5bc-71bf-4c5a-a98c-d96fb1d7d87c"
+          ]
+        }
+      ],
+      "x": 22,
+      "y": 798
+    },
+    {
+      "type": "response",
+      "name": "checkpermsnordvpn_1",
+      "guid": "516ec5bc-71bf-4c5a-a98c-d96fb1d7d87c",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "has perms",
+          "connections": [
+            "10e2505c-b869-489d-b1d4-ff3165576ee3"
+          ]
+        },
+        {
+          "label": "doesn't have perms",
+          "connections": [
+            "38435e82-a05c-46d1-a326-8b638a7c88d0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "58fb1e90-b2a9-4b06-81c8-9b7337ff5195"
+        }
+      ],
+      "x": 168,
+      "y": 778,
+      "rtype": "User Action",
+      "rsubtype": "Check User Permissions",
+      "formdata": [
+        "${dbsVars.CommandAuthor.id}",
+        [
+          "ADMINISTRATOR"
+        ]
+      ],
+      "formnames": [
+        "user",
+        "permissions"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpn cooldown_1",
+      "guid": "38435e82-a05c-46d1-a326-8b638a7c88d0",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "f0a936e0-515c-42c2-82e1-c256f58249fd"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "516ec5bc-71bf-4c5a-a98c-d96fb1d7d87c"
+        }
+      ],
+      "x": 155,
+      "y": 923,
+      "rtype": "Message",
+      "rsubtype": "Command Cooldown",
+      "formdata": [
+        "15",
+        ":red_square: your on 15 sec cooldown",
+        ""
+      ],
+      "formnames": [
+        "seconds",
+        "msg1",
+        "msg2"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpn1_2",
+      "guid": "f0a936e0-515c-42c2-82e1-c256f58249fd",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d728eec2-1cc9-4625-a75d-121d668d8c88"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "38435e82-a05c-46d1-a326-8b638a7c88d0"
+        }
+      ],
+      "x": 303,
+      "y": 950,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "nitro",
+        "1",
+        "1000",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpnn_2",
+      "guid": "d728eec2-1cc9-4625-a75d-121d668d8c88",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "e821c575-a7ad-4bf7-9fb0-780bc8ad0440"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "f0a936e0-515c-42c2-82e1-c256f58249fd"
+        }
+      ],
+      "x": 453,
+      "y": 941,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "nordvpn.csv",
+        "num,",
+        "${tempVars.nitro}",
+        "nitro",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpn_2",
+      "guid": "e821c575-a7ad-4bf7-9fb0-780bc8ad0440",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "Account Type",
+          "value": "nitro",
+          "inline": "false"
+        },
+        {
+          "name": "account:",
+          "value": "${tempVars.nitro.nitro}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "91209132-a63c-49a6-940d-b3daebd51b03"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d728eec2-1cc9-4625-a75d-121d668d8c88"
+        }
+      ],
+      "x": 605,
+      "y": 957,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandAuthor.user.dmChannel}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpninchannel_2",
+      "guid": "91209132-a63c-49a6-940d-b3daebd51b03",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "96743e3d-7411-4dfa-93b5-69533d530f4c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e821c575-a7ad-4bf7-9fb0-780bc8ad0440"
+        }
+      ],
+      "x": 759,
+      "y": 963,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        ":green_square:  Successfully Sent An Account To Your Dm's!",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpn1_2_1",
+      "guid": "10e2505c-b869-489d-b1d4-ff3165576ee3",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d805a0e9-423b-4f25-936e-db9b66009e99"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "516ec5bc-71bf-4c5a-a98c-d96fb1d7d87c"
+        }
+      ],
+      "x": 171,
+      "y": 674,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "nitro",
+        "1",
+        "1000",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "nordvpnn_2_1",
+      "guid": "d805a0e9-423b-4f25-936e-db9b66009e99",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "row is found",
+          "connections": [
+            "ef0a3c7c-4d3e-4c38-9bf0-1e7d051cd3c1"
+          ]
+        },
+        {
+          "label": "row not found",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "10e2505c-b869-489d-b1d4-ff3165576ee3"
+        }
+      ],
+      "x": 327,
+      "y": 664,
+      "rtype": "Spreadsheet",
+      "rsubtype": "Get Row",
+      "formdata": [
+        "nordvpn.csv",
+        "num,",
+        "${tempVars.nitro}",
+        "nitro",
+        "temp"
+      ],
+      "formnames": [
+        "selectedsheet",
+        "colheader",
+        "colval",
+        "rowvariable",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpn_2_1",
+      "guid": "ef0a3c7c-4d3e-4c38-9bf0-1e7d051cd3c1",
+      "embedfields": [
+        {
+          "name": "Account Type",
+          "value": "nitro",
+          "inline": "false"
+        },
+        {
+          "name": "account:",
+          "value": "${tempVars.nitro.nitro}",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "94a3afe9-adde-4ea0-8701-2657407b1ad1"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d805a0e9-423b-4f25-936e-db9b66009e99"
+        }
+      ],
+      "x": 470,
+      "y": 682,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandAuthor.user.dmChannel}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "messagenordvpninchannel_2_1",
+      "guid": "94a3afe9-adde-4ea0-8701-2657407b1ad1",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d9f1d3bc-c50e-472a-b86c-b189f58a7c05"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ef0a3c7c-4d3e-4c38-9bf0-1e7d051cd3c1"
+        }
+      ],
+      "x": 609,
+      "y": 691,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        ":green_square:  Successfully Sent An Account To Your Dm's!",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "acc",
+      "guid": "529576ee-b375-4407-971f-6ab50e831ddf",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "61f43121-c98a-4808-9b3c-9bd5b961735e"
+          ]
+        }
+      ],
+      "x": 1508,
+      "y": 285
+    },
+    {
+      "type": "response",
+      "name": "accmessage",
+      "guid": "61f43121-c98a-4808-9b3c-9bd5b961735e",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "nordvpn",
+          "value": "-nordvpn",
+          "inline": "true"
+        },
+        {
+          "name": "nitro",
+          "value": "-nitro",
+          "inline": "true"
+        },
+        {
+          "name": "soon",
+          "value": "more soon",
+          "inline": "false"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "529576ee-b375-4407-971f-6ab50e831ddf"
+        }
+      ],
+      "x": 1693,
+      "y": 274,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "acc",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "helpbot",
+      "guid": "055f8750-ae1b-433c-be92-3e786a0bbf85",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "cb24b638-7c8e-4095-8f21-08280425ae15"
+          ]
+        }
+      ],
+      "x": 1487,
+      "y": 152,
+      "perms": []
+    },
+    {
+      "type": "response",
+      "name": "helpmessage_1",
+      "guid": "cb24b638-7c8e-4095-8f21-08280425ae15",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "-type",
+          "value": " To Generate An Account",
+          "inline": "true"
+        },
+        {
+          "name": "-acc",
+          "value": "To See What You Can Get",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "055f8750-ae1b-433c-be92-3e786a0bbf85"
+        }
+      ],
+      "x": 1683,
+      "y": 126,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "helpmessage_1_1",
+      "guid": "2c17ef61-eb48-4336-b7ec-56fc62183e39",
+      "embedfields": [
+        {
+          "name": "-type",
+          "value": " To Generate An Account",
+          "inline": "true"
+        },
+        {
+          "name": "-acc",
+          "value": "To See What You Can Get",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "457704f4-0c55-4c3a-80e8-c58be49f0fcf"
+        }
+      ],
+      "x": 944,
+      "y": 156,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "helpmessage_1_1_1",
+      "guid": "cabc09b6-122e-446f-986b-aec1612de2d3",
+      "embedfields": [
+        {
+          "name": "-type",
+          "value": " To Generate An Account",
+          "inline": "true"
+        },
+        {
+          "name": "-acc",
+          "value": "To See What You Can Get",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "073609cc-3316-407b-be91-7ef861f95488"
+        }
+      ],
+      "x": 1041,
+      "y": 421,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "helpmessage_1_1_1_1",
+      "guid": "96743e3d-7411-4dfa-93b5-69533d530f4c",
+      "embedfields": [
+        {
+          "name": "-type",
+          "value": " To Generate An Account",
+          "inline": "true"
+        },
+        {
+          "name": "-acc",
+          "value": "To See What You Can Get",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "91209132-a63c-49a6-940d-b3daebd51b03"
+        }
+      ],
+      "x": 920,
+      "y": 973,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "helpmessage_1_1_1_2",
+      "guid": "d9f1d3bc-c50e-472a-b86c-b189f58a7c05",
+      "embedfields": [
+        {
+          "name": "-type",
+          "value": " To Generate An Account",
+          "inline": "true"
+        },
+        {
+          "name": "-acc",
+          "value": "To See What You Can Get",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "94a3afe9-adde-4ea0-8701-2657407b1ad1"
+        }
+      ],
+      "x": 848,
+      "y": 700,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF0000",
+        "svqn gen",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}
